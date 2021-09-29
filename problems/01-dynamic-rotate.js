@@ -1,11 +1,11 @@
 /***********************************************************************
-Write a function named `dynamicRotate(num)`. When invoked the
+Write a function named `dynamicRotate(num)`. When invoked, the
 `dynamicRotate` function will accept a number to be used as the
 rotation amount and return a function. Positive numbers rotate
 the array to the right and negative numbers rotate to the left.
 
 The function returned by `dynamicRotate` will accept an array to
-be rotated by the amount provided when the `dynamicRotate` was
+be rotated by the amount provided when `dynamicRotate` was
 first invoked. It will return the original array mutated by
 the given rotation.
 
