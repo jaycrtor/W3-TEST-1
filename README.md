@@ -3,7 +3,7 @@
 ## Clone the GitHub Repository
 
 Clone the GitHub repository located at
-[https://github.com/appacademy/assessment-for-sprint-03-version-a-pt-5-unit-test-problems].
+[https://github.com/appacademy/assessment-for-sprint-03-version-a-pt-6-unit-test-problems].
 
 If you get a `404` error when accessing that link, then you must contact your
 PTM as soon as possible with the following message:
