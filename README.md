@@ -40,4 +40,4 @@ When you are ready to submit:
 2. zip up your folder
 3. upload it
 
-[https://github.com/appacademy/assessment-for-sprint-03-version-a-pt-5-unit-test-problems]:https://github.com/appacademy/assessment-for-sprint-03-version-a-pt-5-unit-test-problems
+[https://github.com/appacademy/assessment-for-sprint-03-version-a-pt-6-unit-test-problems]:https://github.com/appacademy/assessment-for-sprint-03-version-a-pt-6-unit-test-problems
