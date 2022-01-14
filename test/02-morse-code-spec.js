@@ -10,11 +10,11 @@ describe("morseCode()", function() {
     chai.spy.restore(global);
   });
 
-  it("should print out a dot with 100ms break", function(done) {
-    let msecs = 100;
+  it("should print out a dot with 100ms break and a dash with 300ms break", function(done) {
+    let msecs = 400;
     this.timeout(msecs + 200);
 
-    code = ['dot'];
+    code = ['dot', 'dash'];
 
     let setIntervalSpy;
     let setConsoleLogSpy;
@@ -22,26 +22,8 @@ describe("morseCode()", function() {
       expect(setIntervalSpy).to.have.been.called.nth(1).with(100);
       expect(setConsoleLogSpy).to.have.been.called.nth(1).with("dot");
 
-      done();
-    }, msecs + 100);
-    setIntervalSpy = chai.spy.on(global, "setTimeout");
-    setConsoleLogSpy = chai.spy.on(console, "log");
-
-    morseCode(code);
-
-  });
-
-  it("should print out a dash with 300ms break", function(done) {
-    let msecs = 300;
-    this.timeout(msecs + 200);
-
-    code = ['dash'];
-
-    let setIntervalSpy;
-    let setConsoleLogSpy;
-    setTimeout(function() {
-      expect(setIntervalSpy).to.have.been.called.nth(1).with(300);
-      expect(setConsoleLogSpy).to.have.been.called.nth(1).with("dash");
+      expect(setIntervalSpy).to.have.been.called.nth(2).with(300);
+      expect(setConsoleLogSpy).to.have.been.called.nth(2).with("dash");
 
       done();
     }, msecs + 100);
@@ -49,7 +31,6 @@ describe("morseCode()", function() {
     setConsoleLogSpy = chai.spy.on(console, "log");
 
     morseCode(code);
-
   });
 
   it("should print out S.O.S. in morse code", function(done) {
@@ -87,13 +68,34 @@ describe("morseCode()", function() {
 
       expect(setIntervalSpy).to.have.been.called.nth(9).with(100);
       expect(setConsoleLogSpy).to.have.been.called.nth(9).with("dot");
+
       done();
     }, msecs + 100);
     setIntervalSpy = chai.spy.on(global, "setTimeout");
     setConsoleLogSpy = chai.spy.on(console, "log");
 
     morseCode(code);
-
   });
 
+  it("should retain correct timing between each console log", function(done) {
+    let msecs = 700;
+    this.timeout(1000);
+
+    code = ['dash', 'dot', 'dash'];
+
+    let setIntervalSpy;
+    let setConsoleLogSpy;
+    setTimeout(function() {
+      expect(setIntervalSpy).to.have.been.called.nth(2).with(100);
+      expect(setConsoleLogSpy).to.have.been.called.nth(2).with("dot");
+      expect(setIntervalSpy).to.have.been.called.exactly(2);
+      expect(setConsoleLogSpy).to.have.been.called.exactly(2);
+
+      done();
+    }, 400); 
+    setIntervalSpy = chai.spy.on(global, "setTimeout");
+    setConsoleLogSpy = chai.spy.on(console, "log");
+
+    morseCode(code);
+  });
 });
