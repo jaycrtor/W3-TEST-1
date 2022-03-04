@@ -4,6 +4,7 @@ of either 'dot' or 'dash' strings. Your function should `console.log`
 each string in order, followed by a pause of 100ms after each `dot`
 and 300ms after each `dash`.
 
+Note: You must use a recursive approach to solve this problem.
 
 Example:
 
